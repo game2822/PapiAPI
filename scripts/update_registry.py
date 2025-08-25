@@ -86,19 +86,16 @@ def main():
         print("magic/upload/ n'existe pas, rien à faire.")
         return 0
 
+
     registry = load_registry()
 
     magic_files = [p for p in DIST_DIR.glob("*.magic") if p.is_file()]
-    if not magic_files:
-        print("Aucun .magic trouvé dans magic/upload/.")
-        return 0
-
+    magic_names = set()
     for magic_path in magic_files:
         m = FILENAME_RE.match(magic_path.name)
         if not m:
             print(f"Ignore {magic_path.name} (nom inattendu)")
             continue
-
         name     = m.group("name")
         build_id = m.group("buildid")
         try:
@@ -108,6 +105,7 @@ def main():
             continue
         version  = infos.get("version", "unknown")
         build_type = parse_build_type(build_id)
+        magic_names.add((name, version))
 
         if infos.get("version") and infos["version"] != version:
             print(f"[WARN] version mismatch: filename={version} / infos.json={infos['version']}")
@@ -143,6 +141,9 @@ def main():
 
         upsert_model(registry, entry)
         print(f"✅ Ajout/MàJ: {entry['name']} {entry['version']} ({build_type})")
+
+    # Supprimer du manifest les modèles dont le .magic n'existe plus
+    registry["models"] = [m for m in registry["models"] if (m.get("name"), m.get("version")) in magic_names]
 
     save_registry(registry)
     print(f"💾 Écrit {REGISTRY_PATH}")
