@@ -3,7 +3,7 @@ name: Update model registry
 on:
   push:
     paths:
-      - "models/*.magic"
+      - "magic/upload/*.magic"
       - "scripts/update_registry.py"
       - ".github/workflows/registry.yml"
     branches:
@@ -31,16 +31,16 @@ jobs:
       - name: Install deps (none needed)
         run: python -V
 
-      - name: Update registry.json
+      - name: Update manifest.json
         run: python scripts/update_registry.py
 
-      - name: Commit registry.json if changed
+      - name: Commit manifest.json if changed
         run: |
-          if [[ -n "$(git status --porcelain data/registry.json)" ]]; then
+          if [[ -n "$(git status --porcelain magic/manifest.json)" ]]; then
             git config user.name  "github-actions[bot]"
             git config user.email "github-actions@github.com"
-            git add data/registry.json
-            git commit -m "chore(registry): update after new .magic"
+            git add magic/manifest.json
+            git commit -m "chore(manifest): update after new .magic"
             git push
           else
             echo "No changes to commit."
