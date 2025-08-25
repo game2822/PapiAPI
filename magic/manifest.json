@@ -14,7 +14,7 @@
       ],
       "size_bytes": 342,
       "sha256": "6a314fa9e23da548b2a597cef80c224e75a865dfb96d572b5076ac1eef373311",
-      "download_url": "https://raw.githubusercontent.com/owner/repo/main/magic/upload/Luma_081539D.magic",
+      "download_url": "https://raw.githubusercontent.com/PapillonApp/PapiAPI/main/magic/upload/Luma_081539D.magic",
       "build_id": "081539D",
       "build_type": "alpha"
     },
@@ -32,7 +32,7 @@
       ],
       "size_bytes": 1673086,
       "sha256": "f1016c28499fb396dc25799c781b0e4f490e46c9eef4fc6e3fe00df9f4c95152",
-      "download_url": "https://raw.githubusercontent.com/owner/repo/main/magic/upload/Luma_081599F.magic",
+      "download_url": "https://raw.githubusercontent.com/PapillonApp/PapiAPI/main/magic/upload/Luma_081599F.magic",
       "build_id": "081599F",
       "build_type": "debug"
     }
