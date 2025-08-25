@@ -1,0 +1,47 @@
+name: Update model registry
+
+on:
+  push:
+    paths:
+      - "models/*.magic"
+      - "scripts/update_registry.py"
+      - ".github/workflows/registry.yml"
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  build-registry:
+    runs-on: ubuntu-latest
+    env:
+      DEFAULT_BRANCH: main
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install deps (none needed)
+        run: python -V
+
+      - name: Update registry.json
+        run: python scripts/update_registry.py
+
+      - name: Commit registry.json if changed
+        run: |
+          if [[ -n "$(git status --porcelain data/registry.json)" ]]; then
+            git config user.name  "github-actions[bot]"
+            git config user.email "github-actions@github.com"
+            git add data/registry.json
+            git commit -m "chore(registry): update after new .magic"
+            git push
+          else
+            echo "No changes to commit."
+          fi

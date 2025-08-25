@@ -1,0 +1,33 @@
+name: Publish manifest to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Copy manifest to pages directory
+        run: |
+          mkdir -p public
+          cp magic/manifest.json public/manifest.json
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: public
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v3
