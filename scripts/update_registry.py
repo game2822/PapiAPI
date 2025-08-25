@@ -17,7 +17,7 @@ BUILD_MAP = {
     "F": "debug",
 }
 
-FILENAME_RE = re.compile(r"^(?P<name>[^_]+)_(?P<version>[^_]+)_(?P<buildid>[A-Za-z0-9]+)\.magic$")
+FILENAME_RE = re.compile(r"^(?P<name>[^_]+)_(?P<buildid>[A-Za-z0-9]+)\.magic$")
 
 def sha256_file(path: Path) -> str:
     h = hashlib.sha256()
@@ -27,8 +27,8 @@ def sha256_file(path: Path) -> str:
     return h.hexdigest()
 
 def parse_build_type(build_id: str) -> str:
-    if len(build_id) >= 3:
-        letter = build_id[2].upper()
+    if build_id:
+        letter = build_id[-1].upper()
         return BUILD_MAP.get(letter, "unknown")
     return "unknown"
 
@@ -36,11 +36,11 @@ def read_model_infos_from_magic(magic_path: Path) -> dict:
   with zipfile.ZipFile(magic_path, "r") as z:
     candidate = None
     for name in z.namelist():
-      if name.lower().endswith("infos.json"):
+      if name.lower().endswith("metadata.json"):
         candidate = name
         break
     if not candidate:
-      raise FileNotFoundError(f"Aucun infos.json dans {magic_path.name}")
+      raise FileNotFoundError(f"Aucun metadata.json dans {magic_path.name}")
 
     with z.open(candidate) as f:
       data = json.loads(f.read().decode("utf-8"))
@@ -100,15 +100,14 @@ def main():
             continue
 
         name     = m.group("name")
-        version  = m.group("version")
         build_id = m.group("buildid")
-        build_type = parse_build_type(build_id)
-
         try:
             infos = read_model_infos_from_magic(magic_path)
         except Exception as e:
             print(f"[ERREUR] {magic_path.name}: {e}")
             continue
+        version  = infos.get("version", "unknown")
+        build_type = parse_build_type(build_id)
 
         if infos.get("version") and infos["version"] != version:
             print(f"[WARN] version mismatch: filename={version} / infos.json={infos['version']}")
