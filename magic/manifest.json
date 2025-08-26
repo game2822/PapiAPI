@@ -2,25 +2,7 @@
   "models": [
     {
       "name": "Luma",
-      "version": "081549F",
-      "author": "Papillon",
-      "date_created": "2025-08-15",
-      "parameters": {
-        "oovIndex": 1,
-        "maxLen": 128
-      },
-      "compatible_versions": [
-        ">8.0.0"
-      ],
-      "size_bytes": 1673086,
-      "sha256": "f1016c28499fb396dc25799c781b0e4f490e46c9eef4fc6e3fe00df9f4c95152",
-      "download_url": "https://raw.githubusercontent.com/PapillonApp/PapiAPI/main/magic/upload/Luma_081599F.magic",
-      "build_id": "081599F",
-      "build_type": "debug"
-    },
-    {
-      "name": "Luma",
-      "version": "2.0.0",
+      "version": "25449D",
       "author": "Papillon",
       "date_created": "2025-08-26",
       "parameters": {
@@ -30,10 +12,10 @@
       "compatible_versions": [
         ">=8.0.0"
       ],
-      "size_bytes": 1673025,
-      "sha256": "3b7c518af2fbec1183ffc3633608c509ca25e7b9255410beda16a4b9c8f85682",
-      "download_url": "https://raw.githubusercontent.com/PapillonApp/PapiAPI/main/magic/upload/Luma_25990D.magic",
-      "build_id": "25990D",
+      "size_bytes": 1673026,
+      "sha256": "69365a7b0b1037c2bf5ce6d9c9722f9d9dde4a03deae7414efd4cb25f50888e1",
+      "download_url": "https://raw.githubusercontent.com/PapillonApp/PapiAPI/main/magic/upload/Luma_25449D.magic",
+      "build_id": "25449D",
       "build_type": "alpha"
     }
   ]
