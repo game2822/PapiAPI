@@ -2,6 +2,24 @@
   "models": [
     {
       "name": "Luma",
+      "version": "25154C",
+      "author": "Papillon",
+      "date_created": "2025-08-26",
+      "parameters": {
+        "oovIndex": 1,
+        "maxLen": 128
+      },
+      "compatible_versions": [
+        ">=8.0.0"
+      ],
+      "size_bytes": 2004385,
+      "sha256": "91988c158aa4a7c5e72677ee47b5b155a6cfca50a45cec19333de5f56d44a4b2",
+      "download_url": "https://raw.githubusercontent.com/PapillonApp/PapiAPI/main/magic/upload/Luma_25154C.magic",
+      "build_id": "25154C",
+      "build_type": "beta"
+    },
+    {
+      "name": "Luma",
       "version": "25449D",
       "author": "Papillon",
       "date_created": "2025-08-26",
