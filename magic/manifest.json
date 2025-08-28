@@ -2,9 +2,9 @@
   "models": [
     {
       "name": "Luma",
-      "version": "25541C",
+      "version": "25175F",
       "author": "Papillon",
-      "date_created": "2025-08-26",
+      "date_created": "2025-08-28",
       "parameters": {
         "oovIndex": 1,
         "maxLen": 128
@@ -12,11 +12,11 @@
       "compatible_versions": [
         ">=8.0.0"
       ],
-      "size_bytes": 1673026,
-      "sha256": "39928bfaf29149182e270dd6d9caaf640ae333667859cbd0bb08de381e5d0ced",
-      "download_url": "https://raw.githubusercontent.com/PapillonApp/PapiAPI/main/magic/upload/Luma_25541C.magic",
-      "build_id": "25541C",
-      "build_type": "beta"
+      "size_bytes": 1802605,
+      "sha256": "324ffa1cdc09565adbd082c4bcbefd87b7fd3c71566feff10e3859f56d97537a",
+      "download_url": "https://raw.githubusercontent.com/PapillonApp/PapiAPI/main/magic/upload/Luma_25175F.magic",
+      "build_id": "25175F",
+      "build_type": "debug"
     }
   ]
 }
