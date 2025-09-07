@@ -1,6 +1,7 @@
 {
   "languages": [
     {
+      "id": "fr",
       "name": "Français",
       "emoji": "🇫🇷",
       "version": "25104D",
@@ -15,6 +16,7 @@
       "progress": "alpha"
     },
     {
+      "id": "en",
       "name": "English",
       "emoji": "🇬🇧",
       "version": "25104D",
@@ -29,6 +31,7 @@
       "progress": "alpha"
     },
     {
+      "id": "de",
       "name": "Deutsch",
       "emoji": "🇩🇪",
       "version": "25104D",
