@@ -2,6 +2,7 @@
   "languages": [
     {
       "name": "Français",
+      "emoji": "🇫🇷",
       "version": "25104D",
       "author": "Papillon",
       "date_created": "2025-09-07",
@@ -15,6 +16,7 @@
     },
     {
       "name": "English",
+      "emoji": "🇬🇧",
       "version": "25104D",
       "author": "Papillon",
       "date_created": "2025-09-07",
@@ -28,6 +30,7 @@
     },
     {
       "name": "Deutsch",
+      "emoji": "🇩🇪",
       "version": "25104D",
       "author": "Papillon",
       "date_created": "2025-09-07",
