@@ -6,9 +6,9 @@ REPO_OWNER = os.environ.get("GITHUB_REPOSITORY", "owner/repo").split("/")[0]
 REPO_NAME  = os.environ.get("GITHUB_REPOSITORY", "owner/repo").split("/")[1]
 DEFAULT_BRANCH = os.environ.get("DEFAULT_BRANCH", "main")
 
-// Paths related to magic+
-MAGIC_DIST_DIR = Path("magic/upload")
-MAGIC_REGISTRY_PATH = Path("magic/manifest.json")
+# Paths related to languages
+LANG_DIST_DIR = Path("languages/upload")
+LANG_REGISTRY_PATH = Path("languages/manifest.json")
 
 BUILD_MAP = {
     "A": "stable",
