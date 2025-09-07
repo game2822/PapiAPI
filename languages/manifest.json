@@ -1,0 +1,43 @@
+{
+  "languages": [
+    {
+      "name": "Français",
+      "version": "25104D",
+      "author": "Papillon",
+      "date_created": "2025-09-07",
+      "compatible_versions": [
+        ">=8.0.0"
+      ],
+      "size_bytes": 5954081,
+      "sha256": "83e6a2d22f08861050d89607e884f6d27ffa3244b267066f77200761f84b5186",
+      "download_url": "https://raw.githubusercontent.com/game2822/PapiAPI/tree/feat/languagemanager/languages/upload/fr.json",
+      "progress": "alpha"
+    },
+    {
+      "name": "English",
+      "version": "25104D",
+      "author": "Papillon",
+      "date_created": "2025-09-07",
+      "compatible_versions": [
+        ">=8.0.0"
+      ],
+      "size_bytes": 5954081,
+      "sha256": "83e6a2d22f08861050d89607e884f6d27ffa3244b267066f77200761f84b5186",
+      "download_url": "https://raw.githubusercontent.com/game2822/PapiAPI/tree/feat/languagemanager/languages/upload/en.json",
+      "progress": "alpha"
+    },
+    {
+      "name": "Deutsch",
+      "version": "25104D",
+      "author": "Papillon",
+      "date_created": "2025-09-07",
+      "compatible_versions": [
+        ">=8.0.0"
+      ],
+      "size_bytes": 5954081,
+      "sha256": "83e6a2d22f08861050d89607e884f6d27ffa3244b267066f77200761f84b5186",
+      "download_url": "https://raw.githubusercontent.com/game2822/PapiAPI/tree/feat/languagemanager/languages/upload/de.json",
+      "progress": "alpha"
+    }
+  ]
+}
